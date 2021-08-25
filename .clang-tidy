@@ -1,0 +1,139 @@
+### https://clang.llvm.org/extra/clang-tidy/
+---
+Checks: '*,
+-bugprone-exception-escape,
+-cppcoreguidelines-avoid-c-arrays,
+-cppcoreguidelines-avoid-magic-numbers,
+-cppcoreguidelines-owning-memory,
+-fuchsia-*,
+-hicpp-avoid-c-arrays,
+-llvmlibc-*,
+-modernize-avoid-c-arrays,
+-modernize-use-trailing-return-type,
+-readability-implicit-bool-conversion,
+-readability-magic-numbers'
+WarningsAsErrors: '*'
+HeaderFilterRegex: '^(.*gtest.*|.*benchmark.*|.*fmt.*)$'
+AnalyzeTemporaryDtors: true
+CheckOptions:
+  - key: google-readability-namespace-comments.SpacesBeforeComments
+    value: '2'
+  ### https://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html
+  - key: google-readability-function-size.LineThreshold
+    value: '80'
+  ### https://clang.llvm.org/extra/clang-tidy/checks/readability-identifier-naming.html
+  - key: readability-identifier-naming.IgnoreMainLikeFunctions
+    value: true
+  ### Prefix & Suffix
+  - key: readability-identifier-naming.ClassSuffix
+    value: _t
+  - key: readability-identifier-naming.MemberPrefix
+    value: m_
+  - key: readability-identifier-naming.PrivateMemberSuffix
+    value: _
+  - key: readability-identifier-naming.PrivateMethodSuffix
+    value: _
+  ### Case
+  - key: readability-identifier-naming.AbstractClassCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassMethodCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstantMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstantParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstantPointerParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstexprFunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstexprMethodCase
+    value: lower_case
+  - key: readability-identifier-naming.ConstexprVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.EnumCase
+    value: lower_case
+  - key: readability-identifier-naming.EnumConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalConstantPointerCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalFunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalPointerCase
+    value: lower_case
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.InlineNamespaceCase
+    value: lower_case
+  - key: readability-identifier-naming.LocalConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.LocalConstantPointerCase
+    value: lower_case
+  - key: readability-identifier-naming.LocalPointerCase
+    value: lower_case
+  - key: readability-identifier-naming.LocalVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: lower_case
+  - key: readability-identifier-naming.MemberCase
+    value: lower_case
+  - key: readability-identifier-naming.MethodCase
+    value: lower_case
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+  - key: readability-identifier-naming.ParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.ParameterPackCase
+    value: lower_case
+  - key: readability-identifier-naming.PointerParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMethodCase
+    value: lower_case
+  - key: readability-identifier-naming.ProtectedMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.ProtectedMethodCase
+    value: lower_case
+  - key: readability-identifier-naming.PublicMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.PublicMethodCase
+    value: lower_case
+  - key: readability-identifier-naming.ScopedEnumConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticConstantCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.StructCase
+    value: lower_case
+  - key: readability-identifier-naming.TemplateParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.TemplateTemplateParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.TypeAliasCase
+    value: lower_case
+  - key: readability-identifier-naming.TypedefCase
+    value: lower_case
+  - key: readability-identifier-naming.TypeTemplateParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.UnionCase
+    value: lower_case
+  - key: readability-identifier-naming.ValueTemplateParameterCase
+    value: lower_case
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.VirtualMethodCase
+    value: lower_case
+...
