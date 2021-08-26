@@ -43,10 +43,13 @@ class UtilsConan(ConanFile):
         if self.settings.os == "Windows":
             del self.options.fPIC
 
+        self.options["boost"].header_only = True
+
     def configure(self):
         pass
 
     def requirements(self):
+        self.requires("boost/1.76.0")
         self.requires("fmt/8.0.1")
         self.requires("ms-gsl/3.1.0")
 
