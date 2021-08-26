@@ -9,6 +9,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${command:cmake.launchTargetPath}",
+            "args": [],
             "symbolSearchPath": "${command:cmake.launchTargetPath}",
             "console": "internalConsole",
             "logging": {

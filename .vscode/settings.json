@@ -1,0 +1,12 @@
+{
+    "cmake.generator": "Visual Studio 16 2019",
+    "cmake.toolset": "v142",
+    "cmake.platform": "x64",
+
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureSettings": {
+        "WITH_TESTS": true
+    },
+
+    "cmake.loggingLevel": "info",
+}

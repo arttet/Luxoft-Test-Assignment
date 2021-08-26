@@ -58,7 +58,6 @@ cmake_print_variables(CMAKE_CXX_CLANG_TIDY)
 # Compiler Options
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  # https://clang.llvm.org/docs/ClangCommandLineReference.html
   add_compile_options(
     "-Wall"
     "-Wextra"
@@ -78,14 +77,12 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     )
   endif()
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  # https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
   add_compile_options(
     "-Wall"
     "-Wextra"
     "-Werror"
   )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-  # https://docs.microsoft.com/en-us/cpp/build/reference/compiler-options?view=msvc-160
   add_compile_definitions(
     UNICODE
     _UNICODE
@@ -98,12 +95,8 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
   add_compile_options(
     "/W4"
     "/WX"
-
     "/utf-8"
-
-    # Enable parallel compilation (https://docs.microsoft.com/en-us/cpp/build/reference/mp-build-with-multiple-processes?view=msvc-160)
     "/MP"
-    # Flag for catch the null pointer exception (https://docs.microsoft.com/en-us/cpp/build/reference/eh-exception-handling-model?view=msvc-160)
     "/EHa"
   )
 endif()
@@ -112,8 +105,10 @@ endif()
 
 # Requirements & Build Requirements
 
+find_package(Boost 1.76.0 EXACT REQUIRED)
 find_package(fmt REQUIRED)
 find_package(Microsoft.GSL REQUIRED)
+find_package(Threads REQUIRED)
 
 if (WITH_TESTS)
   find_package(GTest REQUIRED)
@@ -123,6 +118,7 @@ endif()
 
 enable_testing()
 
+add_subdirectory(lib)
 add_subdirectory(src)
 
 if (WITH_TESTS)

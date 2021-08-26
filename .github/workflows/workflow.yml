@@ -209,7 +209,12 @@ jobs:
         run: conan build . -bf ${{ env.build-folder }}
 
       - name: Test
-        run: ctest -C ${{ matrix.config.build_type }} --output-on-failure --repeat-until-fail 5 --test-dir ${{ env.build-folder }} --output-junit report.xml
+        run: ctest -C ${{ matrix.config.build_type }}
+          --output-on-failure
+          --repeat-until-fail 5
+          --test-dir ${{ env.build-folder }}
+          --output-junit report.xml
+          --timeout 30
 
   coverage:
     name: coverage
@@ -239,7 +244,12 @@ jobs:
         run: conan build . -bf ${{ env.build-folder }}
 
       - name: Test
-        run: ctest -C Debug --output-on-failure --repeat-until-fail 1 --test-dir ${{ env.build-folder }} --output-junit report.xml
+        run: ctest -C Debug
+          --output-on-failure
+          --repeat-until-fail 1
+          --test-dir ${{ env.build-folder }}
+          --output-junit report.xml
+          --timeout 30
 
       - name: Coverage
         shell: bash
