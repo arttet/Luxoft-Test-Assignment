@@ -1,6 +1,7 @@
 # Luxoft Test Assignment
 [![Language](https://img.shields.io/badge/C++-17-blue.svg)](https://en.cppreference.com/w/)
 [![Tests](https://github.com/arttet/LuxoftTestAssignment/actions/workflows/workflow.yml/badge.svg)](https://github.com/arttet/LuxoftTestAssignment/actions/workflows/workflow.yml)
+[![codecov](https://codecov.io/gh/arttet/LuxoftTestAssignment/branch/main/graph/badge.svg?token=ldQVOlQ81B)](https://codecov.io/gh/arttet/LuxoftTestAssignment)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arttet/Luxoft-Test-Assignment/blob/main/LICENSE)
 
 The test assignment on position Senior/Lead C++ Developer at Luxoft includes two problems:
