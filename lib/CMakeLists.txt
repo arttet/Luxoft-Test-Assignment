@@ -1,1 +1,2 @@
 add_subdirectory(increment_number_problem)
+add_subdirectory(knights_tour_problem)

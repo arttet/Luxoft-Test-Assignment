@@ -214,7 +214,7 @@ jobs:
           --repeat-until-fail 5
           --test-dir ${{ env.build-folder }}
           --output-junit report.xml
-          --timeout 30
+          --timeout 120
 
   coverage:
     name: coverage
@@ -249,7 +249,7 @@ jobs:
           --repeat-until-fail 1
           --test-dir ${{ env.build-folder }}
           --output-junit report.xml
-          --timeout 30
+          --timeout 120
 
       - name: Coverage
         shell: bash

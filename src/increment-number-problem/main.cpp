@@ -22,7 +22,7 @@ int main(int argc, char const * const * const argv)
     size_t num = 1024;
     size_t n = 8;
 
-    auto const args = gsl::span(argv, size_t(argc));
+    auto const args = gsl::span(argv, static_cast<size_t>(argc));
     if (args.size() >= 2) {
         std::string_view const arg(args[1]);
         if (!boost::spirit::qi::parse(arg.begin(), arg.end(), num)) {
