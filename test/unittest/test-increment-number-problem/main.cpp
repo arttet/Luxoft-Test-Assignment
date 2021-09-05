@@ -4,7 +4,7 @@
 
 using TestPairSuite = ::testing::TestWithParam<std::tuple<int, int>>;
 
-TEST_P(TestPairSuite, Init)
+TEST_P(TestPairSuite, TestIncrementInteger)
 {
     auto const [num, n] = GetParam();
     EXPECT_EQ(num, increase_number(num, n));

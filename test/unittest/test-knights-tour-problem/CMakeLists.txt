@@ -11,6 +11,8 @@ target_link_libraries(${PROJECT_NAME}
   PRIVATE
     GTest::gtest
     GTest::gtest_main
+
+    knights_tour_problem
 )
 
 add_test(
